@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-lets-chat
+spec:
+  rules:
+  - host: www.davidrgfosst4.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: lets-chat
+            port:
+              number: 80
