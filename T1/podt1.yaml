@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: podt1-web
+ labels:
+   service: web
+spec:
+ containers:
+   - image: iesgn/test_web:latest
+     name: cont-web
