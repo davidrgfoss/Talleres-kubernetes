@@ -1,0 +1,23 @@
+* Instalar Helm
+
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
+* Agregar repositorios
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+* Buscar wordpress en los repositorios
+
+helm search repo bitnami/wordpress
+
+* Instalar wordpress cambiando el servicio a tipo NodePort para permitir el acceso a la app desde una red externa y el nombre del blog a davidrgfoss
+
+helm install my-wordpress bitnami/wordpress --set service.type=NodePort --set wordpressBlogName=davidrgfoss
+
+* Con kubectl get all, podremos ver todos los recursos creados.
+
+Accedemos a la app con la ip de kvm o la de la red de minikube
+
+http://192.168.39.216:30408/
+
+
